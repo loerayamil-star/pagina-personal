@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Yamil De Loera — Portafolio</title>
+  <meta name="description" content="Portafolio de Yamil De Loera: proyectos de seguridad informática, DevSecOps y Cloud Security.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <a class="saltar-enlace" href="#contenido">Saltar al contenido</a>
+
+  <header class="encabezado">
+    <nav class="navegacion" aria-label="Navegación principal">
+      <a class="marca" href="#inicio">Yamil De Loera</a>
+      <ul class="lista-navegacion">
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <button id="boton-tema" class="boton-tema" type="button" aria-pressed="false">
+        <span class="solo-lectores-pantalla">Cambiar modo claro/oscuro</span>
+        <span aria-hidden="true">◐</span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section id="inicio" class="seccion seccion-hero">
+      <h1>Yamil De Loera</h1>
+      <p class="subtitulo">
+        Estudiante que ingresa a Ingeniería en Computación (UNAM) en 2027.
+        Me enfoco en DevSecOps y Cloud Security, construyendo proyectos propios
+        de seguridad mientras tanto.
+      </p>
+      <div class="acciones-hero">
+        <a class="boton boton-principal" href="#proyectos">Ver proyectos</a>
+        <a class="boton boton-secundario" href="#contacto">Contacto</a>
+      </div>
+    </section>
+
+    <section id="sobre-mi" class="seccion">
+      <h2>Sobre mí</h2>
+      <p>
+        Soy un estudiante que entra a Ingeniería en Computación en la UNAM en 2027.
+        Mientras tanto, aprendo y construyo proyectos propios orientados a
+        DevSecOps y seguridad en la nube: automatización de análisis de seguridad,
+        un laboratorio casero de monitoreo (SOC) y herramientas de seguridad
+        ofensiva y defensiva a nivel básico.
+      </p>
+      <p>
+        Uso IA como apoyo en mis proyectos. En el README de cada uno explico qué
+        hice yo y qué fue asistido.
+      </p>
+    </section>
+
+    <section id="habilidades" class="seccion">
+      <h2>Stack y herramientas</h2>
+      <ul class="lista-habilidades">
+        <li>Python</li>
+        <li>FastAPI</li>
+        <li>Bandit y flake8 (análisis estático)</li>
+        <li>Tkinter</li>
+        <li>Sockets y threading</li>
+        <li>Bash / Shell</li>
+        <li>Wazuh</li>
+        <li>Linux y Proxmox (homelab)</li>
+        <li>JavaScript / Node.js</li>
+        <li>Git y GitHub</li>
+      </ul>
+    </section>
+
+    <section id="ruta" class="seccion">
+      <h2>Mi ruta</h2>
+      <p>
+        En 2027 entro a Ingeniería en Computación en la UNAM. Por ahora me
+        enfoco en DevSecOps y Cloud Security de forma autodidacta, construyendo
+        proyectos que me obligan a entender cómo funcionan las herramientas de
+        seguridad por dentro, en vez de solo usarlas. No tengo certificaciones
+        todavía; cuando las tenga, las voy a poner aquí.
+      </p>
+    </section>
+
+    <section id="proyectos" class="seccion">
+      <h2>Proyectos</h2>
+
+      <div class="lista-proyectos">
+        <article class="proyecto proyecto-destacado">
+          <h3>Auditor de Seguridad</h3>
+          <p>
+            Herramienta en Python que audita un repositorio: busca secretos
+            hardcodeados con una expresión regular básica, corre
+            <a href="https://bandit.readthedocs.io/" rel="noopener noreferrer" target="_blank">Bandit</a>
+            (análisis estático) y
+            <a href="https://flake8.pycqa.org/" rel="noopener noreferrer" target="_blank">flake8</a>
+            (estilo), y junta todo en un reporte. Se puede usar como librería o
+            como API HTTP con FastAPI.
+          </p>
+          <p class="proyecto-estado">
+            Estado: funcional, con limitaciones — todavía no analiza
+            dependencias vulnerables, no tiene tests automatizados, y la
+            detección de secretos es una expresión regular simple, no un
+            escáner robusto.
+          </p>
+          <p class="proyecto-stack">Python · FastAPI · Bandit · flake8</p>
+          <a class="enlace-proyecto" href="https://github.com/loerayamil-star/Auditor-de-Seguridad" rel="noopener noreferrer" target="_blank">
+            Ver en GitHub
+          </a>
+        </article>
+
+        <article class="proyecto proyecto-destacado">
+          <h3>mini-SOC</h3>
+          <p>
+            Mini-SOC/SIEM casero que despliego con Wazuh sobre mi homelab en
+            Proxmox, conectando varios contenedores existentes como agentes.
+          </p>
+          <p class="proyecto-estado">
+            Estado: ejecución pendiente — los scripts de despliegue ya están
+            listos, pero la ejecución real está pausada hasta instalar más
+            RAM en el equipo.
+          </p>
+          <p class="proyecto-stack">Wazuh · Proxmox · Bash</p>
+          <a class="enlace-proyecto" href="https://github.com/loerayamil-star/mini-SOC" rel="noopener noreferrer" target="_blank">
+            Ver en GitHub
+          </a>
+        </article>
+
+        <article class="proyecto proyecto-destacado">
+          <h3>Orquestador con seguridad</h3>
+          <p>
+            Asistente personal multiagente que conecta Obsidian, Notion y
+            GitHub, diseñado con seguridad por capas: permisos distintos según
+            el canal, un catálogo de acciones clasificadas por riesgo, y
+            auditoría de los intentos rechazados.
+          </p>
+          <p class="proyecto-stack">JavaScript · Node.js</p>
+          <a class="enlace-proyecto" href="https://github.com/loerayamil-star/orquestador-con-seguridad" rel="noopener noreferrer" target="_blank">
+            Ver en GitHub
+          </a>
+        </article>
+
+        <article class="proyecto proyecto-breve">
+          <h3>Escáner de puertos</h3>
+          <p>
+            Escáner de puertos TCP con interfaz gráfica en Tkinter, hecho desde
+            cero (sin usar nmap) para entender cómo funciona una conexión TCP
+            y cómo manejar hilos sin congelar la interfaz.
+          </p>
+          <a class="enlace-proyecto" href="https://github.com/loerayamil-star/escaner-puertos" rel="noopener noreferrer" target="_blank">
+            Ver en GitHub
+          </a>
+        </article>
+
+        <article class="proyecto proyecto-breve">
+          <h3>Sistema bancario (POO)</h3>
+          <p>
+            Simulador de sistema bancario en Python puro con programación
+            orientada a objetos: clientes, cuentas y transacciones, con
+            contraseñas hasheadas y persistencia en JSON. Proyecto de
+            práctica, no pensado para dinero real.
+          </p>
+          <a class="enlace-proyecto" href="https://github.com/loerayamil-star/sistema-bancario-poo" rel="noopener noreferrer" target="_blank">
+            Ver en GitHub
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contacto" class="seccion">
+      <h2>Contacto</h2>
+      <p>Puedes escribirme por cualquiera de estos canales:</p>
+      <ul class="lista-contacto">
+        <li>
+          <a class="boton-contacto" href="https://github.com/loerayamil-star" rel="noopener noreferrer" target="_blank">
+            <svg class="icono" viewBox="0 0 16 16" width="20" height="20" aria-hidden="true">
+              <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+                0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01
+                1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95
+                0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04
+                2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48
+                0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/>
+            </svg>
+            GitHub
+          </a>
+        </li>
+        <li>
+          <a class="boton-contacto" href="https://www.linkedin.com/in/yamil-de-loera-mx/" rel="noopener noreferrer" target="_blank">
+            <svg class="icono" viewBox="0 0 16 16" width="20" height="20" aria-hidden="true">
+              <path fill="currentColor" d="M14.82 0H1.18C.53 0 0 .52 0 1.17v13.66C0 15.48.53 16 1.18 16h13.64
+                c.65 0 1.18-.52 1.18-1.17V1.17C16 .52 15.47 0 14.82 0ZM4.75 13.64H2.37V6h2.38v7.64Zm-1.19-8.68a1.38
+                1.38 0 1 1 0-2.76 1.38 1.38 0 0 1 0 2.76Zm10.08 8.68h-2.37V9.93c0-.86-.02-1.97-1.2-1.97
+                -1.2 0-1.39.94-1.39 1.9v3.78H6.7V6h2.28v1.04h.03c.32-.6 1.09-1.23 2.25-1.23
+                2.41 0 2.86 1.59 2.86 3.65v4.18Z"/>
+            </svg>
+            LinkedIn
+          </a>
+        </li>
+        <li>
+          <a id="enlace-correo" class="boton-contacto" href="" rel="noopener noreferrer">
+            <svg class="icono" viewBox="0 0 16 16" width="20" height="20" aria-hidden="true">
+              <path fill="currentColor" d="M1.5 3h13A1.5 1.5 0 0 1 16 4.5v7A1.5 1.5 0 0 1 14.5 13h-13A1.5
+                1.5 0 0 1 0 11.5v-7A1.5 1.5 0 0 1 1.5 3Zm.35 1.5 5.56 4.17c.35.26.83.26 1.18 0L14.15 4.5Z"/>
+            </svg>
+            Correo
+          </a>
+          <noscript>
+            <p class="correo-sin-js">yxmdeloera [en] gmail [punto] com</p>
+          </noscript>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="pie-pagina">
+    <p>Yamil De Loera · 2026</p>
+  </footer>
+
+  <script src="js/contacto.js" defer></script>
+</body>
+</html>
