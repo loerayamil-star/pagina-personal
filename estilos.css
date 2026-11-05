@@ -1,0 +1,365 @@
+/* ---------- Paleta de colores ---------- */
+
+:root {
+  --color-fondo: #ffffff;
+  --color-superficie: #f6f5f4;
+  --color-texto: #1a1a1a;
+  --color-texto-suave: #55504c;
+  --color-borde: #e2ddd8;
+  --color-acento: #8a6650;
+  --color-acento-texto: #ffffff;
+  --fuente-sistema: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-fondo: #121212;
+    --color-superficie: #1c1a19;
+    --color-texto: #f1efed;
+    --color-texto-suave: #c2bab3;
+    --color-borde: #35302c;
+    --color-acento: #c79a7d;
+    --color-acento-texto: #121212;
+  }
+}
+
+:root[data-theme="light"] {
+  --color-fondo: #ffffff;
+  --color-superficie: #f6f5f4;
+  --color-texto: #1a1a1a;
+  --color-texto-suave: #55504c;
+  --color-borde: #e2ddd8;
+  --color-acento: #8a6650;
+  --color-acento-texto: #ffffff;
+}
+
+:root[data-theme="dark"] {
+  --color-fondo: #121212;
+  --color-superficie: #1c1a19;
+  --color-texto: #f1efed;
+  --color-texto-suave: #c2bab3;
+  --color-borde: #35302c;
+  --color-acento: #c79a7d;
+  --color-acento-texto: #121212;
+}
+
+/* ---------- Reset y base ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente-sistema);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.55;
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+}
+
+a {
+  color: var(--color-acento);
+  text-decoration-thickness: 2px;
+}
+
+img, svg {
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-acento);
+  outline-offset: 2px;
+}
+
+/* ---------- Utilidades de accesibilidad ---------- */
+
+.solo-lectores-pantalla {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.saltar-enlace {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--color-acento);
+  color: var(--color-acento-texto);
+  padding: 0.75rem 1rem;
+  z-index: 10;
+}
+
+.saltar-enlace:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
+/* ---------- Encabezado / navegación ---------- */
+
+.encabezado {
+  border-bottom: 1px solid var(--color-borde);
+  position: sticky;
+  top: 0;
+  background-color: var(--color-fondo);
+  z-index: 5;
+}
+
+.navegacion {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  padding: 0.85rem 1rem;
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.marca {
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--color-texto);
+  margin-right: auto;
+}
+
+.lista-navegacion {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.lista-navegacion a {
+  text-decoration: none;
+  color: var(--color-texto-suave);
+  font-size: 0.95rem;
+}
+
+.lista-navegacion a:hover,
+.lista-navegacion a:focus-visible {
+  color: var(--color-texto);
+}
+
+.boton-tema {
+  background: none;
+  border: 1px solid var(--color-borde);
+  border-radius: 999px;
+  width: 2.25rem;
+  height: 2.25rem;
+  font-size: 1.1rem;
+  color: var(--color-texto);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.boton-tema:hover {
+  border-color: var(--color-acento);
+}
+
+/* ---------- Secciones generales ---------- */
+
+.seccion {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem;
+}
+
+.seccion h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.seccion-hero {
+  padding-top: 3.5rem;
+  padding-bottom: 3rem;
+}
+
+.seccion-hero h1 {
+  font-size: 1.9rem;
+  margin: 0 0 0.75rem;
+}
+
+.subtitulo {
+  color: var(--color-texto-suave);
+  font-size: 1.05rem;
+  max-width: 34rem;
+}
+
+.acciones-hero {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+/* ---------- Botones ---------- */
+
+.boton {
+  display: inline-block;
+  padding: 0.65rem 1.25rem;
+  border-radius: 0.4rem;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+.boton-principal {
+  background-color: var(--color-acento);
+  color: var(--color-acento-texto);
+}
+
+.boton-principal:hover {
+  opacity: 0.9;
+}
+
+.boton-secundario {
+  border-color: var(--color-borde);
+  color: var(--color-texto);
+}
+
+.boton-secundario:hover {
+  border-color: var(--color-acento);
+}
+
+/* ---------- Lista de habilidades ---------- */
+
+.lista-habilidades {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lista-habilidades li {
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: 0.4rem;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+/* ---------- Proyectos ---------- */
+
+.lista-proyectos {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.proyecto {
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: 0.6rem;
+  padding: 1.25rem;
+}
+
+.proyecto h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+.proyecto p {
+  margin: 0.5rem 0;
+}
+
+.proyecto-estado {
+  color: var(--color-texto-suave);
+  font-size: 0.9rem;
+}
+
+.proyecto-stack {
+  font-size: 0.85rem;
+  color: var(--color-texto-suave);
+}
+
+.enlace-proyecto {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.enlace-proyecto:hover {
+  text-decoration: underline;
+}
+
+.proyecto-breve {
+  padding: 1rem 1.25rem;
+}
+
+/* ---------- Contacto ---------- */
+
+.lista-contacto {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+}
+
+.boton-contacto {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--color-borde);
+  border-radius: 0.4rem;
+  text-decoration: none;
+  color: var(--color-texto);
+}
+
+.boton-contacto:hover {
+  border-color: var(--color-acento);
+  color: var(--color-acento);
+}
+
+.icono {
+  flex-shrink: 0;
+}
+
+.correo-sin-js {
+  margin-top: 0.75rem;
+  color: var(--color-texto-suave);
+  font-size: 0.9rem;
+}
+
+/* ---------- Pie de página ---------- */
+
+.pie-pagina {
+  text-align: center;
+  padding: 2rem 1.25rem;
+  color: var(--color-texto-suave);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--color-borde);
+}
+
+/* ---------- Pantallas más grandes ---------- */
+
+@media (min-width: 640px) {
+  .lista-proyectos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .proyecto-breve {
+    grid-column: span 1;
+  }
+
+  .seccion-hero h1 {
+    font-size: 2.3rem;
+  }
+}
