@@ -398,6 +398,84 @@ img, svg {
   font-weight: 600;
 }
 
+/* ---------- Mi ruta (línea de tiempo) ----------
+   Vertical en todos los tamaños: se lee de arriba abajo con scroll normal.
+   ::before es el riel; ::after es el tramo recorrido (lo anima movimiento). */
+
+.linea-tiempo {
+  position: relative;
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0 0 0 2rem;
+}
+
+.linea-tiempo::before,
+.linea-tiempo::after {
+  content: "";
+  position: absolute;
+  left: 0.45rem;
+  top: 0.4rem;
+  bottom: 0.4rem;
+  width: 2px;
+  background-color: var(--color-borde);
+}
+
+.linea-tiempo::after {
+  background-color: var(--color-acento);
+  transform-origin: top;
+}
+
+.etapa {
+  position: relative;
+  padding-bottom: 1.75rem;
+}
+
+.etapa:last-child {
+  padding-bottom: 0;
+}
+
+/* Marcador de la etapa: rombo sólido si ya ocurrió o es la actual,
+   rombo hueco si todavía está pendiente. */
+.etapa::before {
+  content: "";
+  position: absolute;
+  left: -1.95rem;
+  top: 0.3rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  transform: rotate(45deg);
+  background-color: var(--color-acento);
+  border: 2px solid var(--color-acento);
+  z-index: 1;
+}
+
+.etapa-pendiente::before {
+  background-color: var(--color-fondo);
+}
+
+.etapa-actual::before {
+  box-shadow: 0 0 0 4px var(--color-resplandor);
+}
+
+.etapa-cuando {
+  font-family: var(--fuente-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-acento);
+  margin: 0;
+}
+
+.etapa h3 {
+  font-size: 1.05rem;
+  margin: 0.2rem 0 0.25rem;
+}
+
+.etapa p:not(.etapa-cuando) {
+  margin: 0;
+  color: var(--color-texto-suave);
+}
+
 /* ---------- Lista de habilidades ---------- */
 
 .lista-habilidades {

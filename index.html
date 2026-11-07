@@ -98,15 +98,40 @@
       </p>
     </section>
 
-    <section id="ruta" class="seccion">
-      <h2>Mi ruta</h2>
+    <section id="ruta" class="seccion" aria-labelledby="titulo-ruta">
+      <h2 id="titulo-ruta">Mi ruta</h2>
       <p>
-        En 2027 entro a Ingeniería en Computación en la UNAM. Por ahora me
-        enfoco en DevSecOps y Cloud Security de forma autodidacta, construyendo
-        proyectos que me obligan a entender cómo funcionan las herramientas de
-        seguridad por dentro, en vez de solo usarlas. No tengo certificaciones
-        todavía; cuando las tenga, las voy a poner aquí.
+        Por ahora me enfoco en DevSecOps y Cloud Security de forma autodidacta,
+        construyendo proyectos que me obligan a entender cómo funcionan las
+        herramientas de seguridad por dentro, en vez de solo usarlas.
       </p>
+
+      <ol class="linea-tiempo">
+        <!-- TODO Yamil: etapa de inicio. Falta el año en que empiezas a
+             aprender por tu cuenta. Plantilla:
+        <li class="etapa">
+          <p class="etapa-cuando">AAAA</p>
+          <h3>Empiezo a aprender por mi cuenta</h3>
+        </li>
+        -->
+        <li class="etapa etapa-actual">
+          <p class="etapa-cuando">Ahora <span class="solo-lectores-pantalla">(etapa actual)</span></p>
+          <h3>Autodidacta en DevSecOps y Cloud Security</h3>
+          <!-- TODO Yamil: si quieres mencionar la preparatoria, confirma el
+               texto exacto (sin horario ni nombre detallado del plantel). -->
+          <p>Aprendo construyendo proyectos propios de seguridad.</p>
+        </li>
+        <li class="etapa etapa-pendiente">
+          <p class="etapa-cuando">En preparación</p>
+          <h3>Certificación GitHub Foundations</h3>
+          <p>Todavía no tengo certificaciones; esta es la primera que preparo.</p>
+        </li>
+        <li class="etapa etapa-pendiente">
+          <p class="etapa-cuando">2027</p>
+          <h3>Ingeniería en Computación, UNAM</h3>
+          <p>Siguiente etapa.</p>
+        </li>
+      </ol>
     </section>
 
     <section id="stack" class="seccion">
