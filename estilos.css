@@ -1,70 +1,83 @@
 /* ---------- Paleta de colores ----------
-   Contraste verificado (WCAG AA) contra fondo y superficie en ambos temas.
+   Oscuro: negro y grises, texto blanco, acento dorado; el café solo aparece
+   en detalles (bordes, divisores, fondo de tarjetas), nunca como texto.
+   Claro: blanco y gris claro, texto negro, acento café; el dorado es solo
+   decorativo (resplandor y riel de la línea de tiempo), nunca texto.
+   Contraste verificado (WCAG AA) para texto, enlaces, hover, foco y bordes
+   de controles contra fondo y superficie en ambos temas.
    El tema se define cuatro veces a propósito: preferencia del sistema (funciona
    sin JavaScript) y los dos valores explícitos que pone el toggle de tema. */
 
 :root {
   --color-fondo: #ffffff;
-  --color-superficie: #f5f3fa;
-  --color-texto: #17151d;
-  --color-texto-suave: #56516a;
-  --color-borde: #e2deeb;
-  --color-acento: #6a3fd1;
+  --color-superficie: #f3f1ee;
+  --color-texto: #15120f;
+  --color-texto-suave: #57514a;
+  --color-borde: #e3dcd2;
+  --color-borde-control: #8a8178;
+  --color-acento: #7a4a24;
+  --color-acento-hover: #5a3418;
   --color-acento-texto: #ffffff;
-  --color-cuadricula: rgba(106, 63, 209, 0.07);
-  --color-resplandor: rgba(106, 63, 209, 0.12);
-  --color-estado-curso: #2c5fb8;
-  --color-estado-pausa: #8a5a00;
-  --color-estado-terminado: #1d7a46;
+  --color-foco: #7a4a24;
+  --color-decorativo: #c9a227;
+  --color-cuadricula: rgba(122, 74, 36, 0.06);
+  --color-resplandor: rgba(201, 162, 39, 0.16);
+  /* Los estados usan colores de la paleta; la forma del ícono los distingue. */
+  --color-estado-curso: var(--color-acento);
+  --color-estado-pausa: var(--color-texto-suave);
+  --color-estado-terminado: var(--color-texto);
   --fuente-sistema: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --fuente-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-fondo: #0b0a10;
-    --color-superficie: #15131c;
-    --color-texto: #ecebf2;
-    --color-texto-suave: #a9a5b8;
-    --color-borde: #2a2635;
-    --color-acento: #b69cff;
-    --color-acento-texto: #0b0a10;
-    --color-cuadricula: rgba(182, 156, 255, 0.07);
-    --color-resplandor: rgba(124, 77, 255, 0.22);
-    --color-estado-curso: #8fb8ff;
-    --color-estado-pausa: #f0b860;
-    --color-estado-terminado: #6fd39a;
+    --color-fondo: #0b0a09;
+    --color-superficie: #1a1511;
+    --color-texto: #f5f2ee;
+    --color-texto-suave: #b5aea6;
+    --color-borde: #4a3727;
+    --color-borde-control: #8a7f74;
+    --color-acento: #d9b453;
+    --color-acento-hover: #ecd08a;
+    --color-acento-texto: #0b0a09;
+    --color-foco: #d9b453;
+    --color-decorativo: #4a3727;
+    --color-cuadricula: rgba(140, 100, 65, 0.12);
+    --color-resplandor: rgba(217, 180, 83, 0.10);
   }
 }
 
 :root[data-theme="light"] {
   --color-fondo: #ffffff;
-  --color-superficie: #f5f3fa;
-  --color-texto: #17151d;
-  --color-texto-suave: #56516a;
-  --color-borde: #e2deeb;
-  --color-acento: #6a3fd1;
+  --color-superficie: #f3f1ee;
+  --color-texto: #15120f;
+  --color-texto-suave: #57514a;
+  --color-borde: #e3dcd2;
+  --color-borde-control: #8a8178;
+  --color-acento: #7a4a24;
+  --color-acento-hover: #5a3418;
   --color-acento-texto: #ffffff;
-  --color-cuadricula: rgba(106, 63, 209, 0.07);
-  --color-resplandor: rgba(106, 63, 209, 0.12);
-  --color-estado-curso: #2c5fb8;
-  --color-estado-pausa: #8a5a00;
-  --color-estado-terminado: #1d7a46;
+  --color-foco: #7a4a24;
+  --color-decorativo: #c9a227;
+  --color-cuadricula: rgba(122, 74, 36, 0.06);
+  --color-resplandor: rgba(201, 162, 39, 0.16);
 }
 
 :root[data-theme="dark"] {
-  --color-fondo: #0b0a10;
-  --color-superficie: #15131c;
-  --color-texto: #ecebf2;
-  --color-texto-suave: #a9a5b8;
-  --color-borde: #2a2635;
-  --color-acento: #b69cff;
-  --color-acento-texto: #0b0a10;
-  --color-cuadricula: rgba(182, 156, 255, 0.07);
-  --color-resplandor: rgba(124, 77, 255, 0.22);
-  --color-estado-curso: #8fb8ff;
-  --color-estado-pausa: #f0b860;
-  --color-estado-terminado: #6fd39a;
+  --color-fondo: #0b0a09;
+  --color-superficie: #1a1511;
+  --color-texto: #f5f2ee;
+  --color-texto-suave: #b5aea6;
+  --color-borde: #4a3727;
+  --color-borde-control: #8a7f74;
+  --color-acento: #d9b453;
+  --color-acento-hover: #ecd08a;
+  --color-acento-texto: #0b0a09;
+  --color-foco: #d9b453;
+  --color-decorativo: #4a3727;
+  --color-cuadricula: rgba(140, 100, 65, 0.12);
+  --color-resplandor: rgba(217, 180, 83, 0.10);
 }
 
 /* ---------- Reset y base ---------- */
@@ -86,7 +99,7 @@ body {
   line-height: 1.55;
 }
 
-/* Fondo: cuadrícula fina con un resplandor morado arriba, hecho solo con
+/* Fondo: cuadrícula fina con un resplandor dorado arriba, hecho solo con
    gradientes (sin imágenes). Se desvanece hacia abajo con una máscara. */
 body::before {
   content: "";
@@ -113,12 +126,16 @@ a {
   text-decoration-thickness: 2px;
 }
 
+a:hover {
+  color: var(--color-acento-hover);
+}
+
 img, svg {
   max-width: 100%;
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-acento);
+  outline: 3px solid var(--color-foco);
   outline-offset: 2px;
 }
 
@@ -200,7 +217,7 @@ img, svg {
 
 .boton-tema {
   background: none;
-  border: 1px solid var(--color-borde);
+  border: 1px solid var(--color-borde-control);
   border-radius: 999px;
   width: 2.25rem;
   height: 2.25rem;
@@ -302,11 +319,12 @@ img, svg {
 }
 
 .boton-principal:hover {
-  opacity: 0.9;
+  background-color: var(--color-acento-hover);
+  color: var(--color-acento-texto);
 }
 
 .boton-secundario {
-  border-color: var(--color-borde);
+  border-color: var(--color-borde-control);
   color: var(--color-texto);
 }
 
@@ -425,7 +443,7 @@ img, svg {
   top: 0.4rem;
   bottom: 0.4rem;
   width: 2px;
-  background-color: var(--color-borde);
+  background-color: var(--color-decorativo);
 }
 
 .linea-tiempo::after {
@@ -591,6 +609,7 @@ img, svg {
   flex-direction: column;
   background-color: var(--color-superficie);
   border: 1px solid var(--color-borde);
+  border-top: 3px solid var(--color-decorativo);
   border-radius: 0.6rem;
   padding: 1.25rem;
 }
@@ -691,6 +710,8 @@ img, svg {
 .proyecto-proximo {
   justify-content: center;
   border-style: dashed;
+  border-top-width: 1px;
+  border-top-color: var(--color-borde);
   background-color: transparent;
 }
 
@@ -714,15 +735,15 @@ img, svg {
   align-items: center;
   gap: 0.5rem;
   padding: 0.6rem 1rem;
-  border: 1px solid var(--color-borde);
+  border: 1px solid var(--color-borde-control);
   border-radius: 0.4rem;
   text-decoration: none;
   color: var(--color-texto);
 }
 
 .boton-contacto:hover {
-  border-color: var(--color-acento);
-  color: var(--color-acento);
+  border-color: var(--color-acento-hover);
+  color: var(--color-acento-hover);
 }
 
 .icono {
