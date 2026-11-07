@@ -565,7 +565,11 @@ img, svg {
   color: var(--color-texto-suave);
 }
 
-/* ---------- Proyectos ---------- */
+/* ---------- Registro de proyectos ---------- */
+
+.seccion-ancha {
+  max-width: 64rem;
+}
 
 .lista-proyectos {
   display: grid;
@@ -574,34 +578,100 @@ img, svg {
 }
 
 .proyecto {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   background-color: var(--color-superficie);
   border: 1px solid var(--color-borde);
   border-radius: 0.6rem;
   padding: 1.25rem;
 }
 
+.proyecto-cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.proyecto-numero {
+  font-family: var(--fuente-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--color-acento);
+  margin: 0;
+}
+
+.proyecto .estado {
+  margin: 0;
+}
+
 .proyecto h3 {
-  margin: 0 0 0.5rem;
-  font-size: 1.1rem;
+  margin: 0.6rem 0 0.75rem;
+  font-size: 1.15rem;
 }
 
 .proyecto p {
   margin: 0.5rem 0;
 }
 
-.proyecto-estado {
+.captura {
+  margin: 0 0 0.75rem;
+}
+
+/* Proporción fija 16:10 para que la página no salte cuando cargue la imagen. */
+.captura img,
+.captura-pendiente {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  border-radius: 0.4rem;
+  border: 1px solid var(--color-borde);
+}
+
+.captura-pendiente {
+  display: grid;
+  place-items: center;
+  background-color: var(--color-fondo);
+  background-image:
+    linear-gradient(var(--color-cuadricula) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-cuadricula) 1px, transparent 1px);
+  background-size: 1rem 1rem;
+  font-family: var(--fuente-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-texto-suave);
+}
+
+.proyecto-limites {
   color: var(--color-texto-suave);
   font-size: 0.9rem;
 }
 
-.proyecto-stack {
-  font-size: 0.85rem;
+.etiquetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+}
+
+.etiquetas li {
+  font-family: var(--fuente-mono);
+  font-size: 0.75rem;
+  border: 1px solid var(--color-borde);
+  border-radius: 0.3rem;
+  padding: 0.15rem 0.5rem;
   color: var(--color-texto-suave);
 }
 
 .enlace-proyecto {
   display: inline-block;
-  margin-top: 0.5rem;
+  margin-top: auto;
+  padding-top: 1rem;
   font-weight: 600;
   text-decoration: none;
 }
@@ -610,8 +680,14 @@ img, svg {
   text-decoration: underline;
 }
 
-.proyecto-breve {
-  padding: 1rem 1.25rem;
+.proyecto-proximo {
+  justify-content: center;
+  border-style: dashed;
+  background-color: transparent;
+}
+
+.proyecto-proximo p:last-child {
+  color: var(--color-texto-suave);
 }
 
 /* ---------- Contacto ---------- */
@@ -668,11 +744,21 @@ img, svg {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .proyecto-breve {
-    grid-column: span 1;
+  .mapa-capacidades {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .nivel-solida {
+    grid-row: span 2;
   }
 
   .seccion-hero h1 {
     font-size: 3rem;
+  }
+}
+
+@media (min-width: 960px) {
+  .lista-proyectos {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

@@ -180,12 +180,25 @@
       </div>
     </section>
 
-    <section id="proyectos" class="seccion">
-      <h2>Proyectos</h2>
+    <section id="proyectos" class="seccion seccion-ancha" aria-labelledby="titulo-proyectos">
+      <h2 id="titulo-proyectos">Registro de proyectos</h2>
+      <p>Proyectos propios, con su estado real y sus limitaciones.</p>
 
       <div class="lista-proyectos">
-        <article class="proyecto proyecto-destacado">
-          <h3>Auditor de Seguridad</h3>
+        <article id="proyecto-001" class="proyecto" aria-labelledby="titulo-proyecto-001">
+          <header class="proyecto-cabecera">
+            <p class="proyecto-numero">No. 001</p>
+            <p class="estado estado-curso">En curso</p>
+          </header>
+          <h3 id="titulo-proyecto-001">Auditor de Seguridad</h3>
+          <figure class="captura">
+            <!-- TODO Yamil: reemplaza este recuadro por la captura (16:10):
+            <img src="img/proyectos/001-auditor.webp" alt="reporte del Auditor de Seguridad con los hallazgos de secretos, Bandit y flake8" width="1280" height="800" loading="lazy">
+            -->
+            <div class="captura-pendiente" role="img" aria-label="Captura pendiente: reporte del Auditor de Seguridad con los hallazgos de secretos, Bandit y flake8">
+              <span aria-hidden="true">Captura pendiente</span>
+            </div>
+          </figure>
           <p>
             Herramienta en Python que audita un repositorio: busca secretos
             hardcodeados con una expresión regular básica, corre
@@ -195,72 +208,150 @@
             (estilo), y junta todo en un reporte. Se puede usar como librería o
             como API HTTP con FastAPI.
           </p>
-          <p class="proyecto-estado">
-            Estado: funcional, con limitaciones — todavía no analiza
-            dependencias vulnerables, no tiene tests automatizados, y la
-            detección de secretos es una expresión regular simple, no un
-            escáner robusto.
+          <p class="proyecto-limites">
+            Funcional, con limitaciones: todavía no analiza dependencias
+            vulnerables, no tiene tests automatizados, y la detección de
+            secretos es una expresión regular simple, no un escáner robusto.
           </p>
-          <p class="proyecto-stack">Python · FastAPI · Bandit · flake8</p>
+          <ul class="etiquetas" aria-label="Tecnologías">
+            <li>Python</li>
+            <li>FastAPI</li>
+            <li>Bandit</li>
+            <li>flake8</li>
+          </ul>
           <a class="enlace-proyecto" href="https://github.com/loerayamil-star/Auditor-de-Seguridad" rel="noopener noreferrer" target="_blank">
-            Ver en GitHub
+            Ver en GitHub<span class="solo-lectores-pantalla">: Auditor de Seguridad (se abre en otra pestaña)</span>
           </a>
         </article>
 
-        <article class="proyecto proyecto-destacado">
-          <h3>mini-SOC</h3>
+        <article id="proyecto-002" class="proyecto" aria-labelledby="titulo-proyecto-002">
+          <header class="proyecto-cabecera">
+            <p class="proyecto-numero">No. 002</p>
+            <p class="estado estado-pausa">En pausa</p>
+          </header>
+          <h3 id="titulo-proyecto-002">mini-SOC</h3>
+          <figure class="captura">
+            <!-- TODO Yamil: reemplaza este recuadro por la captura (16:10):
+            <img src="img/proyectos/002-mini-soc.webp" alt="scripts de despliegue del mini-SOC con Wazuh sobre Proxmox" width="1280" height="800" loading="lazy">
+            -->
+            <div class="captura-pendiente" role="img" aria-label="Captura pendiente: scripts de despliegue del mini-SOC con Wazuh sobre Proxmox">
+              <span aria-hidden="true">Captura pendiente</span>
+            </div>
+          </figure>
           <p>
             Mini-SOC/SIEM casero que despliego con Wazuh sobre mi homelab en
             Proxmox, conectando varios contenedores existentes como agentes.
           </p>
-          <p class="proyecto-estado">
-            Estado: ejecución pendiente — los scripts de despliegue ya están
-            listos, pero la ejecución real está pausada hasta instalar más
-            RAM en el equipo.
+          <p class="proyecto-limites">
+            Ejecución pendiente: los scripts de despliegue ya están listos, pero
+            la ejecución real está pausada hasta instalar más RAM en el equipo.
           </p>
-          <p class="proyecto-stack">Wazuh · Proxmox · Bash</p>
+          <ul class="etiquetas" aria-label="Tecnologías">
+            <li>Wazuh</li>
+            <li>Proxmox</li>
+            <li>Bash</li>
+          </ul>
           <a class="enlace-proyecto" href="https://github.com/loerayamil-star/mini-SOC" rel="noopener noreferrer" target="_blank">
-            Ver en GitHub
+            Ver en GitHub<span class="solo-lectores-pantalla">: mini-SOC (se abre en otra pestaña)</span>
           </a>
         </article>
 
-        <article class="proyecto proyecto-destacado">
-          <h3>Orquestador con seguridad</h3>
+        <article id="proyecto-003" class="proyecto" aria-labelledby="titulo-proyecto-003">
+          <header class="proyecto-cabecera">
+            <p class="proyecto-numero">No. 003</p>
+            <!-- TODO Yamil: estado del proyecto (En curso / En pausa / Terminado). -->
+          </header>
+          <h3 id="titulo-proyecto-003">Orquestador con seguridad</h3>
+          <figure class="captura">
+            <!-- TODO Yamil: reemplaza este recuadro por la captura (16:10):
+            <img src="img/proyectos/003-orquestador.webp" alt="catálogo de acciones clasificadas por riesgo del Orquestador con seguridad" width="1280" height="800" loading="lazy">
+            -->
+            <div class="captura-pendiente" role="img" aria-label="Captura pendiente: catálogo de acciones clasificadas por riesgo del Orquestador con seguridad">
+              <span aria-hidden="true">Captura pendiente</span>
+            </div>
+          </figure>
           <p>
             Asistente personal multiagente que conecta Obsidian, Notion y
             GitHub, diseñado con seguridad por capas: permisos distintos según
             el canal, un catálogo de acciones clasificadas por riesgo, y
             auditoría de los intentos rechazados.
           </p>
-          <p class="proyecto-stack">JavaScript · Node.js</p>
+          <!-- TODO Yamil: qué funciona hoy y qué falta, por ejemplo:
+          <p class="proyecto-limites">Funciona: ... Falta: ...</p>
+          -->
+          <ul class="etiquetas" aria-label="Tecnologías">
+            <li>JavaScript</li>
+            <li>Node.js</li>
+          </ul>
           <a class="enlace-proyecto" href="https://github.com/loerayamil-star/orquestador-con-seguridad" rel="noopener noreferrer" target="_blank">
-            Ver en GitHub
+            Ver en GitHub<span class="solo-lectores-pantalla">: Orquestador con seguridad (se abre en otra pestaña)</span>
           </a>
         </article>
 
-        <article class="proyecto proyecto-breve">
-          <h3>Escáner de puertos</h3>
+        <article id="proyecto-004" class="proyecto" aria-labelledby="titulo-proyecto-004">
+          <header class="proyecto-cabecera">
+            <p class="proyecto-numero">No. 004</p>
+            <!-- TODO Yamil: estado del proyecto (En curso / En pausa / Terminado). -->
+          </header>
+          <h3 id="titulo-proyecto-004">Escáner de puertos</h3>
+          <figure class="captura">
+            <!-- TODO Yamil: reemplaza este recuadro por la captura (16:10):
+            <img src="img/proyectos/004-escaner.webp" alt="interfaz en Tkinter del Escáner de puertos mostrando un escaneo" width="1280" height="800" loading="lazy">
+            -->
+            <div class="captura-pendiente" role="img" aria-label="Captura pendiente: interfaz en Tkinter del Escáner de puertos mostrando un escaneo">
+              <span aria-hidden="true">Captura pendiente</span>
+            </div>
+          </figure>
           <p>
             Escáner de puertos TCP con interfaz gráfica en Tkinter, hecho desde
             cero (sin usar nmap) para entender cómo funciona una conexión TCP
             y cómo manejar hilos sin congelar la interfaz.
           </p>
+          <ul class="etiquetas" aria-label="Tecnologías">
+            <li>Python</li>
+            <li>Tkinter</li>
+            <li>sockets</li>
+            <li>threading</li>
+          </ul>
           <a class="enlace-proyecto" href="https://github.com/loerayamil-star/escaner-puertos" rel="noopener noreferrer" target="_blank">
-            Ver en GitHub
+            Ver en GitHub<span class="solo-lectores-pantalla">: Escáner de puertos (se abre en otra pestaña)</span>
           </a>
         </article>
 
-        <article class="proyecto proyecto-breve">
-          <h3>Sistema bancario (POO)</h3>
+        <article id="proyecto-005" class="proyecto" aria-labelledby="titulo-proyecto-005">
+          <header class="proyecto-cabecera">
+            <p class="proyecto-numero">No. 005</p>
+            <!-- TODO Yamil: estado del proyecto (En curso / En pausa / Terminado). -->
+          </header>
+          <h3 id="titulo-proyecto-005">Sistema bancario (POO)</h3>
+          <figure class="captura">
+            <!-- TODO Yamil: reemplaza este recuadro por la captura (16:10):
+            <img src="img/proyectos/005-sistema-bancario.webp" alt="menú del Sistema bancario en la terminal" width="1280" height="800" loading="lazy">
+            -->
+            <div class="captura-pendiente" role="img" aria-label="Captura pendiente: menú del Sistema bancario en la terminal">
+              <span aria-hidden="true">Captura pendiente</span>
+            </div>
+          </figure>
           <p>
             Simulador de sistema bancario en Python puro con programación
             orientada a objetos: clientes, cuentas y transacciones, con
             contraseñas hasheadas y persistencia en JSON. Proyecto de
             práctica, no pensado para dinero real.
           </p>
+          <ul class="etiquetas" aria-label="Tecnologías">
+            <li>Python</li>
+            <li>POO</li>
+            <li>JSON</li>
+          </ul>
           <a class="enlace-proyecto" href="https://github.com/loerayamil-star/sistema-bancario-poo" rel="noopener noreferrer" target="_blank">
-            Ver en GitHub
+            Ver en GitHub<span class="solo-lectores-pantalla">: Sistema bancario (POO) (se abre en otra pestaña)</span>
           </a>
+        </article>
+
+        <article class="proyecto proyecto-proximo" aria-labelledby="titulo-proyecto-proximo">
+          <p class="proyecto-numero">No. 006</p>
+          <h3 id="titulo-proyecto-proximo">Más proyectos en camino</h3>
+          <p>Cuando el siguiente esté listo para mostrarse, aparece aquí.</p>
         </article>
       </div>
     </section>
