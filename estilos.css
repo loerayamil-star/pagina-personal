@@ -214,6 +214,14 @@ img, svg {
   border-color: var(--color-acento);
 }
 
+/* Sin JavaScript el toggle no puede funcionar, así que no se muestra;
+   el tema sigue la preferencia del sistema. */
+@media (scripting: none) {
+  .boton-tema {
+    display: none;
+  }
+}
+
 /* ---------- Secciones generales ---------- */
 
 .seccion {
