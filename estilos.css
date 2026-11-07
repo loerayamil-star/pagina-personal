@@ -1,46 +1,58 @@
-/* ---------- Paleta de colores ---------- */
+/* ---------- Paleta de colores ----------
+   Contraste verificado (WCAG AA) contra fondo y superficie en ambos temas.
+   El tema se define cuatro veces a propósito: preferencia del sistema (funciona
+   sin JavaScript) y los dos valores explícitos que pone el toggle de tema. */
 
 :root {
   --color-fondo: #ffffff;
-  --color-superficie: #f6f5f4;
-  --color-texto: #1a1a1a;
-  --color-texto-suave: #55504c;
-  --color-borde: #e2ddd8;
-  --color-acento: #8a6650;
+  --color-superficie: #f5f3fa;
+  --color-texto: #17151d;
+  --color-texto-suave: #56516a;
+  --color-borde: #e2deeb;
+  --color-acento: #6a3fd1;
   --color-acento-texto: #ffffff;
+  --color-cuadricula: rgba(106, 63, 209, 0.07);
+  --color-resplandor: rgba(106, 63, 209, 0.12);
   --fuente-sistema: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --fuente-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-fondo: #121212;
-    --color-superficie: #1c1a19;
-    --color-texto: #f1efed;
-    --color-texto-suave: #c2bab3;
-    --color-borde: #35302c;
-    --color-acento: #c79a7d;
-    --color-acento-texto: #121212;
+    --color-fondo: #0b0a10;
+    --color-superficie: #15131c;
+    --color-texto: #ecebf2;
+    --color-texto-suave: #a9a5b8;
+    --color-borde: #2a2635;
+    --color-acento: #b69cff;
+    --color-acento-texto: #0b0a10;
+    --color-cuadricula: rgba(182, 156, 255, 0.07);
+    --color-resplandor: rgba(124, 77, 255, 0.22);
   }
 }
 
 :root[data-theme="light"] {
   --color-fondo: #ffffff;
-  --color-superficie: #f6f5f4;
-  --color-texto: #1a1a1a;
-  --color-texto-suave: #55504c;
-  --color-borde: #e2ddd8;
-  --color-acento: #8a6650;
+  --color-superficie: #f5f3fa;
+  --color-texto: #17151d;
+  --color-texto-suave: #56516a;
+  --color-borde: #e2deeb;
+  --color-acento: #6a3fd1;
   --color-acento-texto: #ffffff;
+  --color-cuadricula: rgba(106, 63, 209, 0.07);
+  --color-resplandor: rgba(106, 63, 209, 0.12);
 }
 
 :root[data-theme="dark"] {
-  --color-fondo: #121212;
-  --color-superficie: #1c1a19;
-  --color-texto: #f1efed;
-  --color-texto-suave: #c2bab3;
-  --color-borde: #35302c;
-  --color-acento: #c79a7d;
-  --color-acento-texto: #121212;
+  --color-fondo: #0b0a10;
+  --color-superficie: #15131c;
+  --color-texto: #ecebf2;
+  --color-texto-suave: #a9a5b8;
+  --color-borde: #2a2635;
+  --color-acento: #b69cff;
+  --color-acento-texto: #0b0a10;
+  --color-cuadricula: rgba(182, 156, 255, 0.07);
+  --color-resplandor: rgba(124, 77, 255, 0.22);
 }
 
 /* ---------- Reset y base ---------- */
@@ -54,11 +66,30 @@ html {
 }
 
 body {
+  position: relative;
   margin: 0;
   font-family: var(--fuente-sistema);
   background-color: var(--color-fondo);
   color: var(--color-texto);
   line-height: 1.55;
+}
+
+/* Fondo: cuadrícula fina con un resplandor morado arriba, hecho solo con
+   gradientes (sin imágenes). Se desvanece hacia abajo con una máscara. */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 70rem;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(ellipse 80% 45% at 50% 0%, var(--color-resplandor), transparent 70%),
+    linear-gradient(var(--color-cuadricula) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-cuadricula) 1px, transparent 1px);
+  background-size: 100% 100%, 2rem 2rem, 2rem 2rem;
+  -webkit-mask-image: linear-gradient(to bottom, #000 40%, transparent);
+  mask-image: linear-gradient(to bottom, #000 40%, transparent);
 }
 
 h1, h2, h3 {
