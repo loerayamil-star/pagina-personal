@@ -476,23 +476,93 @@ img, svg {
   color: var(--color-texto-suave);
 }
 
-/* ---------- Lista de habilidades ---------- */
+/* ---------- Stack: mapa de capacidades ----------
+   El nivel se comunica tres veces: por el encabezado de cada grupo (lo que
+   leen los lectores de pantalla), por el tipo de línea y por el color. */
 
-.lista-habilidades {
+.leyenda {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--color-texto-suave);
+}
+
+.leyenda li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.muestra {
+  flex-shrink: 0;
+  width: 2.5rem;
+  border-top: 3px solid var(--color-acento);
+}
+
+.muestra-punteada {
+  border-top-style: dotted;
+}
+
+.muestra-discontinua {
+  border-top-style: dashed;
+  border-top-color: var(--color-texto-suave);
+}
+
+.mapa-capacidades {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.nivel {
+  border: 1px solid var(--color-borde);
+  border-radius: 0.6rem;
+  background-color: var(--color-superficie);
+  padding: 1rem;
+}
+
+.nivel h3 {
+  font-family: var(--fuente-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-texto-suave);
+  margin: 0 0 0.75rem;
+}
+
+.capacidades {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem 0.75rem;
+  gap: 0.5rem;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.lista-habilidades li {
-  background-color: var(--color-superficie);
-  border: 1px solid var(--color-borde);
+.capacidades li {
+  border: 2px solid var(--color-acento);
   border-radius: 0.4rem;
-  padding: 0.4rem 0.75rem;
+  padding: 0.3rem 0.7rem;
   font-size: 0.9rem;
+  background-color: var(--color-fondo);
+}
+
+.nivel-punteada .capacidades li {
+  border-style: dotted;
+}
+
+.nivel-discontinua .capacidades li {
+  border-style: dashed;
+  border-color: var(--color-texto-suave);
+}
+
+.nivel-vacio {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-texto-suave);
 }
 
 /* ---------- Proyectos ---------- */
