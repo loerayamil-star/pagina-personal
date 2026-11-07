@@ -143,6 +143,9 @@ img, svg {
   position: sticky;
   top: 0;
   background-color: var(--color-fondo);
+  background-color: color-mix(in srgb, var(--color-fondo) 88%, transparent);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   z-index: 5;
 }
 
@@ -166,7 +169,7 @@ img, svg {
 .lista-navegacion {
   list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: 0.25rem 1rem;
   margin: 0;
   padding: 0;
   flex-wrap: wrap;
@@ -205,6 +208,32 @@ img, svg {
   max-width: 42rem;
   margin: 0 auto;
   padding: 2.5rem 1.25rem;
+  /* Deja espacio para el encabezado fijo al saltar con un enlace interno. */
+  scroll-margin-top: 6rem;
+}
+
+.sobretitulo,
+.press-start {
+  font-family: var(--fuente-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-acento);
+  margin: 0 0 0.5rem;
+}
+
+.press-start {
+  margin-top: 1.75rem;
+  color: var(--color-texto-suave);
+}
+
+.cursor {
+  display: inline-block;
+  width: 0.55em;
+  height: 1em;
+  margin-left: 0.35em;
+  vertical-align: -0.15em;
+  background-color: var(--color-acento);
 }
 
 .seccion h2 {
@@ -218,7 +247,8 @@ img, svg {
 }
 
 .seccion-hero h1 {
-  font-size: 1.9rem;
+  font-size: 2.2rem;
+  letter-spacing: -0.01em;
   margin: 0 0 0.75rem;
 }
 
@@ -391,6 +421,6 @@ img, svg {
   }
 
   .seccion-hero h1 {
-    font-size: 2.3rem;
+    font-size: 3rem;
   }
 }
